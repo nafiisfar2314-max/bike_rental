@@ -10,7 +10,7 @@ from PIL import Image
 import os
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-model_bike = pickle.load(open(os.path.join(BASE_DIR, 'modal/rental_bike.pkl'), 'rb'))
+model_bike = pickle.load(open(os.path.join(BASE_DIR, 'model/rental_bike.pkl'), 'rb'))
 
 st.set_page_config(page_title="Bike Sharing Prediction", page_icon="🚲", layout="centered")
 
