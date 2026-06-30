@@ -142,20 +142,44 @@ def predict_bike_rentals():
         st.write("### 📊  Input Data Summary")
         st.write(input_data)
 
-    if st.sidebar.button("Predict"):
+   if st.sidebar.button("Predict"):
         with st.spinner("Predicting..."):
             time.sleep(2)
             prediction = model_bike.predict(input_data)
-            hasil = max(0, int(round(prediction[0]))) 
+            hasil = max(0, int(round(prediction[0])))
+            
+
+            # Tentukan status berdasarkan hasil
+            if hasil < 50:
+                status = "🟢 LOW"
+            elif hasil < 200:
+                status = "🟡 MODERATE"
+            else:
+                status = "🔴 HIGH"
 
             st.success(f"🚲 Predicted bike rentals: **{hasil} bikes**")
 
+            # ── Metric Cards ──────────────────────────────────
+            col1, col2, col3 = st.columns(3)
+
+            with st.container(border=True):
+                col1, col2, col3 = st.columns(3)
+
+                with col1:
+                    st.metric("Predicted Rentals", f"{hasil} bikes")
+                with col2:
+                    st.metric("Temperature", f"{temp_celsius:.1f}°C")
+                with col3:
+                    st.metric("Demand Status", status)
+
+            # ── Kategori Detail ───────────────────────────────
             if hasil < 50:
-                st.info("📊  Category: LOW DEMAND — Fleet can be reduced")
+                st.info("📊 Category: LOW DEMAND — Fleet can be reduced")
             elif hasil < 200:
                 st.warning("📊 Category: MODERATE DEMAND — Normal fleet size")
             else:
                 st.error("📊 Category: HIGH DEMAND — Increase fleet!")
+
 
 def about():
     st.title("About this App")
