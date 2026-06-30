@@ -10,7 +10,7 @@ from PIL import Image
 import os
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-model_bike = pickle.load(open(os.path.join(BASE_DIR, 'rental_bike.pkl'), 'rb'))
+model_bike = pickle.load(open(os.path.join(BASE_DIR, 'modal/rental_bike.pkl'), 'rb'))
 
 st.set_page_config(page_title="Bike Sharing Prediction", page_icon="🚲", layout="centered")
 
@@ -28,7 +28,7 @@ def predict_bike_rentals():
     initial_sidebar_state="expanded"  # "expanded", "collapsed", "auto"
 )
 
-    st.image("bike.jpeg", caption="Bike Sharing Prediction", use_container_width=True)
+    st.image("public./bike.jpeg", caption="Bike Sharing Prediction", use_container_width=True)
 
     st.sidebar.header("Input Parameters:")
     with st.sidebar.expander("ℹ️ Column Description (click to expand)"):
