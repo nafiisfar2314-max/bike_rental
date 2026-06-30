@@ -28,7 +28,7 @@ def predict_bike_rentals():
     initial_sidebar_state="expanded"  # "expanded", "collapsed", "auto"
 )
 
-    st.image("public./bike.jpeg", caption="Bike Sharing Prediction", use_container_width=True)
+    st.image("public./rental.jpg", caption="Bike Sharing Prediction", use_container_width=True)
 
     st.sidebar.header("Input Parameters:")
     with st.sidebar.expander("ℹ️ Column Description (click to expand)"):
