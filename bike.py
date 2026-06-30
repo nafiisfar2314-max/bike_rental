@@ -159,9 +159,6 @@ def predict_bike_rentals():
 
             st.success(f"🚲 Predicted bike rentals: **{hasil} bikes**")
 
-            # ── Metric Cards ──────────────────────────────────
-            col1, col2, col3 = st.columns(3)
-
             with st.container(border=True):
                 col1, col2, col3 = st.columns(3)
 
