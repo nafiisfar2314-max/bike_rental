@@ -21,7 +21,7 @@ def predict_bike_rentals():
         Data obtained from the UCI Machine Learning Repository: [Bike Sharing Dataset](https://archive.ics.uci.edu/dataset/275/bike+sharing+dataset)
                     """)
         
-    st.image("public/bike.jpeg", caption="Bike Sharing Prediction", use_container_width=True)
+    st.image("public./bike.jpeg", caption="Bike Sharing Prediction", use_container_width=True)
 
     st.sidebar.header("Input Parameters:")
     with st.sidebar.expander("ℹ️ Column Description (click to expand)"):
